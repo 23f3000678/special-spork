@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes - Recipe Finder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">🍳 <span>Recipe Finder</span></div>
+  </header>
+
+  <section class="hero">
+    <h1>Find Recipes With What You Have!</h1>
+    <p>Enter your ingredients, and we’ll suggest recipes just for you.</p>
+  </section>
+  
+  <section class="user-ingredients-grid" id="userIngredientsGrid"></section>
+
+  <section class="ingredient-input">
+    <input type="text" id="ingredientsInput" placeholder="Add an ingredient...">
+    <button onclick="addIngredient()">Add</button>
+  </section>
+
+  <section class="recipe-info">
+    <p>You can directly choose a recipe from below, or add ingredients above to filter recipes.</p>
+  </section>
+
+
+  <section class="recipe-grid" id="recipeGrid"></section>
+
+
+  <section class="todo-section">
+    <h2>Shopping TO-DO List 📝</h2>
+    <div class="todo-container">
+      <input type="text" id="todoInput" placeholder="Add an item...">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="todoList"></ul>
+  </section>
+
+
+
+  <footer>
+    <p>© 2025 <a href="index.html" style="color: white; text-decoration: underline;">Recipe Finder</a> | Built with 🧡 | 📞 Contact</p>
+  </footer>
+
+  <script>
+   
+    let userIngredients = localStorage.getItem('userIngredients')?.split(',') || [];
+
+   const allRecipes = [
+  { name: '🍝 Pasta', ingredients: ['pasta', 'tomato', 'cheese'], image: 'image/pasta.jpg' },
+  { name: '🥗 Salad', ingredients: ['lettuce', 'tomato', 'cucumber'], image: 'image/salad.jpg' },
+  { name: '🍕 Pizza', ingredients: ['dough', 'cheese', 'tomato'], image: 'image/pizza.jpg' },
+  { name: '🍲 Soup', ingredients: ['carrot', 'onion', 'celery'], image: 'image/soup.jpg' },
+  { name: '🌮 Tacos', ingredients: ['taco shell', 'chicken', 'cheese'], image: 'image/tacos.jpg' }
+];
+
+    const recipeGrid = document.getElementById('recipeGrid');
+    const userIngredientsGrid = document.getElementById('userIngredientsGrid');
+
+    function displayUserIngredients() {
+      if (!userIngredientsGrid) return;
+      userIngredientsGrid.innerHTML = '';
+      userIngredients.forEach(ingredient => {
+        const card = document.createElement('div');
+        card.className = 'user-ingredient-card';
+        card.textContent = ingredient;
+        userIngredientsGrid.appendChild(card);
+      });
+    }
+
+    function displayRecipes() {
+      if (!recipeGrid) return;
+      recipeGrid.innerHTML = '';
+      allRecipes.forEach(recipe => {
+        const match = recipe.ingredients.some(i => userIngredients.includes(i.trim().toLowerCase()));
+        if (match || userIngredients.length === 0) {
+          const card = document.createElement('div');
+          card.className = 'recipe-card';
+          card.textContent = recipe.name;
+          recipeGrid.appendChild(card);
+        }
+      });
+    }
+
+    function addIngredient() {
+      const input = document.getElementById('ingredientsInput');
+      const ingredient = input.value.trim().toLowerCase();
+      if (ingredient && !userIngredients.includes(ingredient)) {
+        userIngredients.push(ingredient);
+        input.value = '';
+        displayUserIngredients(); 
+        displayRecipes();
+      }
+    }
+
+   displayUserIngredients();
+    displayRecipes();
+
+    function addTask() {
+      const input = document.getElementById('todoInput');
+      const value = input.value.trim();
+      if (!value) return;
+
+      const li = document.createElement('li');
+      li.textContent = value;
+
+      const span = document.createElement('span');
+      span.textContent = '✖';
+      span.onclick = () => li.remove();
+
+      li.appendChild(span);
+      document.getElementById('todoList').appendChild(li);
+      input.value = '';
+    }
+  </script>
+</body>
+</html>
