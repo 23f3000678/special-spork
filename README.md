@@ -1,4 +1,5 @@
 Recipe Finder — Internship Task 1
+
 This is the Task 1 submission for the internship. It demonstrates:
 •	Basic HTML structure (headings, paragraphs, images, links)
 •	CSS styling (colors, fonts, spacing, layout)
@@ -10,6 +11,7 @@ Files
 •	script.js — JS with showWelcome()
 
 Recipe Finder — Internship Task 2
+
 This is the Task 2 submission for the internship. It demonstrates:
 •	Responsive layout using Flexbox (navigation) and CSS Grid (content)
 •	Media queries for different screen sizes
@@ -22,6 +24,7 @@ Files
 •	script.js — JS for DOM manipulation (to-do list and gallery)
 
 Recipe Finder — Internship Task 3
+
 This is the Task 3 submission for the internship. It demonstrates:
 •   Advanced CSS styling for interactive, responsive web pages
 •   Use of media queries to adjust layouts, font sizes, and elements for mobile, tablet, and desktop
@@ -39,6 +42,7 @@ Files
 •   quiz.js — JS for quiz interactivity
 
 Full Project Implementation — Internship Task 4
+
 This is the Task 4 submission for the internship. It demonstrates:
 •   Combining HTML, CSS, and JavaScript to build fully functioning projects
 •   Building a Personal Portfolio Website:
