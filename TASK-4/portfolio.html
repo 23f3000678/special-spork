@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Recipe Finder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fffaf5, #ffe4e1);
+      margin: 0;
+      color: #333;
+    }
+
+    header {
+      background: #b5544c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    nav {
+      background: #ff6f61;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #b5544c;
+      text-align: center;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      background: #fffaf5;
+      border: 1px solid #ffb6b6;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .contact-form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #ff6f61;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #b5544c;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      background: #b5544c;
+      color: white;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>🍳 Recipe Finder-About Us</header>
+
+
+
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <section id="about">
+    <h1>About Recipe Finder</h1>
+    <p>
+      Recipe Finder is a smart web application that helps users discover delicious recipes using ingredients they already have at home.
+      This project demonstrates my skills in HTML, CSS, JavaScript, and API integration.
+    </p>
+    <p>
+      Built with love, creativity, and a pinch of code magic 💻✨
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="/recipe-finder-task1/image/recipefinder.png" alt="Recipe Finder Project">
+        <h3>Recipe Finder</h3>
+        <p>Find recipes using available ingredients and explore creative meal ideas!</p>
+      </div>
+      <div class="project-card">
+        <img src="/recipe-finder-task1/image/todolist.png" alt="To-Do List Project">
+        <h3>To-Do List</h3>
+        <p>A simple and interactive to-do list app with local storage support.</p>
+      </div>
+      <div class="project-card">
+        <img src="/recipe-finder-task1/image/imagecarausel.png" alt="Image Carousel Project">
+        <h3>Image Carousel</h3>
+        <p>An image gallery with sliding transitions built using JavaScript.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-form">
+      <input type="text" placeholder="Your Name"><br>
+      <input type="email" placeholder="Your Email"><br>
+      <textarea rows="4" placeholder="Your Message"></textarea><br>
+      <button>Send Message</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Recipe Finder | Built with 🧡 by Ananya | <a href="index.html">Home</a></p>
+  </footer>
+
+</body>
+</html>

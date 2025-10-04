@@ -35,3 +35,26 @@ Files
 •   style.css — shared styling for all pages
 •   carousel.js — JS for image carousel
 •   quiz.js — JS for quiz interactivity
+
+Full Project Implementation — Internship Task 4
+This is the Task 4 submission for the internship. It demonstrates:
+•   Combining HTML, CSS, and JavaScript to build fully functioning projects
+•   Building a Personal Portfolio Website:
+ – Sections include “About”, “Projects”, and “Contact”
+ – Fully responsive design across mobile, tablet, and desktop
+•   Creating a To-Do List / Note-Taking App:
+ – Implements data persistence using localStorage
+ – Tasks or notes are saved and retrieved automatically
+•   Developing a Product Listing Page:
+ – Users can filter items by category or price
+ – Items can be sorted by rating, price, or other criteria
+
+Files
+•   index.html — Portfolio home page
+•   about.html — About section page
+•   projects.html — Projects showcase page
+•   contact.html — Contact form page
+•   todo.html — To-do list / note-taking app page
+•   products.html — Product listing page with filtering and sorting
+•   style.css — Shared styling for all pages
+•   script.js — JavaScript for portfolio navigation, to-do app, and product interactions
