@@ -3,6 +3,7 @@ This is the Task 1 submission for the internship. It demonstrates:
 •	Basic HTML structure (headings, paragraphs, images, links)
 •	CSS styling (colors, fonts, spacing, layout)
 •	A small JavaScript function that triggers an alert when a button is clicked
+
 Files
 •	index.html — main page
 •	style.css — basic styling
@@ -14,6 +15,7 @@ This is the Task 2 submission for the internship. It demonstrates:
 •	Media queries for different screen sizes
 •	A dynamic To-Do List where users can add and remove tasks
 •	An Image Gallery where users can upload and delete images
+
 Files
 •	second.html — responsive layout + interactive features
 •	style.css — shared styling for consistency
