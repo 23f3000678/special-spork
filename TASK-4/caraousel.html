@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder - Image Carousel</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap"rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    Recipe Finder 🍳 - Carousel
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="recipes.html">Recipes</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="about.html">About</a>
+</nav>
+
+  </header>
+  <style>/* Header */
+header {
+  width: 100%;
+  background: #b5544c;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  margin: 0;
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  background: #ff6f61;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #fffbe7;
+  text-decoration: underline;
+}
+</style>
+
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="/recipe-finder-task1/image/cake.jpeg" alt="Food 1">
+      <img src="/recipe-finder-task1/image/pasta.jpeg" alt="Food 2">
+      <img src="/recipe-finder-task1/image/soup.jpeg" alt="Food 3">
+      <img src="/recipe-finder-task1/image/salad.jpeg" alt="Food 4">
+    </div>
+  </div>
+
+   
+  <div class="carousel-buttons">
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </div>
+</div>
+<footer>
+  <p>&copy; 2025 Recipe Finder | Built by Ananya</p>
+  <nav>
+    <a href="about.html">About</a> |
+    <a href="projects.html">Projects</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+</footer>
+
+ 
+
+  <script src="caraousel.js"></script>
+</body>
+</html>
