@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Finder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <header> <div class="site-title"> Recipe Finder🍳</div></header>
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="caraousel.html">Carousel</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="quiz.html">Quiz</a>
+      
+    </nav>
+
+  
+
+  <div class="container">
+    <h2>Find Recipes with Your Ingredients</h2>
+
+    <div>
+      <input type="text" id="ingredientInput" placeholder="Enter an ingredient" />
+      <button onclick="addIngredient()">Add</button>
+    </div>
+
+    <ul id="ingredientList"></ul>
+    <button onclick="findRecipes()">Find Recipes</button>
+<div id="recipeResults"></div>
+
+    <div class="controls">
+      <select id="filterSelect" onchange="applyFiltersAndSort()">
+        <option value="all">All Recipes</option>
+        <option value="missing2">Missing ≤ 2 Ingredients</option>
+      </select>
+      <select id="sortSelect" onchange="applyFiltersAndSort()">
+        <option value="default">Sort: Default</option>
+        <option value="name">Sort by Name</option>
+        <option value="used">Sort by Used Ingredients</option>
+      </select>
+    </div>
+
+    <div id="recipes"></div>
+
+    <div class="todo-section">
+      <h2>📝 Shopping To-Do List</h2>
+      <div class="todo-container">
+        <input type="text" id="todoInput" placeholder="Add an item...">
+        <button onclick="addTask()">Add</button>
+      </div>
+      <ul id="todoList"></ul>
+    </div>
+  </div>
+
+  <script src="recipe.js"></script>
+
+  <footer>
+    <p>&copy; 2025 Recipe Finder | Built by Ananya</p>
+  </footer>
+
+</body>
+</html>
