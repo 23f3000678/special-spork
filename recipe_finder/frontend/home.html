@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home | Recipe Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts + main stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Extra styles only for this dashboard page */
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fffaf5, #ffe4e1);
+      margin: 0;
+    }
+
+    header {
+      background: #b5544c;
+      color: white;
+      padding: 16px 0;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .site-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.6rem;
+    }
+
+    nav {
+  background: #ff6f61;
+  display: flex;
+  align-items: center;        
+  justify-content: center;
+  gap: 22px;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.98rem;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #fffbe7;
+    }
+
+    .logout-link {
+  background: white;
+  color: #ff6f61;
+  border: none;
+  padding: 6px 14px;          
+  border-radius: 999px;       
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  line-height: normal;        
+  height: auto;               
+  display: inline-block;      
+  transition: 0.3s;
+}
+
+.logout-link:hover {
+  background: black;
+  color: white;
+  transform: scale(1.05);
+}
+
+
+    .home-container {
+      max-width: 950px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px 25px 35px;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .home-container h1 {
+      font-size: 1.8rem;
+      color: #b5544c;
+      margin-bottom: 8px;
+    }
+
+    .home-container p {
+      color: #666;
+      font-size: 0.98rem;
+      margin-bottom: 25px;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .feature-card {
+      background: #fff7f4;
+      border-radius: 15px;
+      padding: 18px 16px;
+      width: 260px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      color: #b5544c;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      color: #555;
+    }
+
+    .feature-card .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: none;
+      background: #ff6f61;
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .feature-card .btn:hover {
+      background: #000;
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 600px) {
+      .home-container {
+        margin: 20px 12px;
+        padding: 22px 16px 26px;
+      }
+
+      .site-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="site-title">Recipe Finder 🍳</div>
+  </header>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="todo.html">To-Do</a>
+    <a href="caraousel.html">Carousel</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="portfolio.html">About Us</a>
+    <button id="logoutBtn" class="logout-link">Logout</button>
+  </nav>
+
+  <main class="home-container">
+    <h1 id="welcomeText">Welcome, User!</h1>
+    <p>Explore recipes, manage your to-do list, and discover cooking products — all in one place.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>🍲 Find Recipes</h3>
+        <p>Search from thousands of recipes based on the ingredients you already have.</p>
+        <a href="recipes.html" class="btn">Explore Recipes</a>
+      </div>
+
+      <div class="feature-card">
+        <h3>📝 To-Do List</h3>
+        <p>Plan your cooking tasks and grocery items with a simple, smart checklist.</p>
+        <a href="todo.html" class="btn">Go to To-Do</a>
+      </div>
+
+      <div class="feature-card">
+        <h3>🎠 Carousel & Quiz</h3>
+        <p>Browse food images and test your knowledge with the interactive quiz.</p>
+        <a href="caraousel.html" class="btn">Open Carousel</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("user"));
+    const welcomeText = document.getElementById("welcomeText");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    // If no user is logged in, send to login page
+    if (!user) {
+      welcomeText.textContent = "Welcome, Guest!";
+    } else {
+      welcomeText.textContent = `Welcome, ${user.name}!`;
+    }
+
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("user");
+        alert("Logged out successfully!");
+        window.location.href = "index.html";
+      });
+    }
+  </script>
+
+</body>
+</html>

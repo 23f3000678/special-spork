@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | Recipe Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff0f3, #ffd6d6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .auth-wrapper {
+      width: 100%;
+      max-width: 420px;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.8rem;
+      color: #b5544c;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    .auth-container {
+      background: #ffffff;
+      padding: 1.8rem 1.6rem;
+      border-radius: 18px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+    }
+
+    form {
+      margin-top: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      margin: 6px 0;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus {
+      border-color: #ff6f61;
+      box-shadow: 0 0 0 2px rgba(255,111,97,0.15);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 10px;
+      border: none;
+      background: #ff6f61;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.25s, transform 0.15s;
+    }
+
+    button:hover {
+      background: #000;
+      transform: scale(1.02);
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .toggle a {
+      color: #ff6f61;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .toggle a:hover {
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .message {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #b5544c;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .auth-container {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <header>
+      <h1>Recipe Finder 🍳</h1>
+      <p>Sign up or log in to save your favourite recipes.</p>
+    </header>
+
+    <div class="auth-container">
+
+      <!-- Signup Form -->
+      <form id="signupForm">
+        <h2>Create Account</h2>
+        <input type="text" id="signupName" placeholder="Full Name" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+        <p class="toggle">
+          Already have an account?
+          <a href="#" id="goToLogin">Login</a>
+        </p>
+        <p class="message" id="signupMsg"></p>
+      </form>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="hidden">
+        <h2>Welcome Back</h2>
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <p class="toggle">
+          Don’t have an account?
+          <a href="#" id="goToSignup">Sign up</a>
+        </p>
+        <p class="message" id="loginMsg"></p>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    const BASE_URL = "http://localhost:5000";
+
+    const signupForm = document.getElementById("signupForm");
+    const loginForm = document.getElementById("loginForm");
+    const goToLogin = document.getElementById("goToLogin");
+    const goToSignup = document.getElementById("goToSignup");
+    const signupMsg = document.getElementById("signupMsg");
+    const loginMsg = document.getElementById("loginMsg");
+
+    // Toggle between forms
+    if (goToLogin) {
+      goToLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        signupForm.classList.add("hidden");
+        loginForm.classList.remove("hidden");
+        signupMsg.textContent = "";
+        loginMsg.textContent = "";
+      });
+    }
+
+    if (goToSignup) {
+      goToSignup.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginForm.classList.add("hidden");
+        signupForm.classList.remove("hidden");
+        signupMsg.textContent = "";
+        loginMsg.textContent = "";
+      });
+    }
+
+    // Handle Signup
+    signupForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      signupMsg.textContent = "";
+
+      const name = document.getElementById("signupName").value.trim();
+      const email = document.getElementById("signupEmail").value.trim();
+      const password = document.getElementById("signupPassword").value.trim();
+
+      try {
+        const res = await fetch(BASE_URL + "/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          signupMsg.style.color = "green";
+          signupMsg.textContent = "Signup successful! Redirecting...";
+          localStorage.setItem("user", JSON.stringify(data.user));
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1200);
+        } else {
+          signupMsg.style.color = "#b5544c";
+          signupMsg.textContent = data.error || "Signup failed";
+        }
+      } catch (err) {
+        signupMsg.style.color = "#b5544c";
+        signupMsg.textContent = "Network error. Please try again.";
+      }
+    });
+
+    // Handle Login
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      loginMsg.textContent = "";
+
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+
+      try {
+        const res = await fetch(BASE_URL + "/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          loginMsg.style.color = "green";
+          loginMsg.textContent = "Login successful! Redirecting...";
+          localStorage.setItem("user", JSON.stringify(data.user));
+          setTimeout(() => {
+            window.location.href = "home.html";
+          }, 1200);
+        } else {
+          loginMsg.style.color = "#b5544c";
+          loginMsg.textContent = data.error || "Login failed";
+        }
+      } catch (err) {
+        loginMsg.style.color = "#b5544c";
+        loginMsg.textContent = "Network error. Please try again.";
+      }
+    });
+  </script>
+
+</body>
+</html>
