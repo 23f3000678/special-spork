@@ -1,66 +1,76 @@
-Recipe Finder — Internship Task 1
+Recipe Finder — Web Application 
 
-This is the Task 1 submission for the internship. It demonstrates:
-•	Basic HTML structure (headings, paragraphs, images, links)
-•	CSS styling (colors, fonts, spacing, layout)
-•	A small JavaScript function that triggers an alert when a button is clicked
+A responsive Recipe Finder web application built using HTML, CSS, and JavaScript.  
+This project was developed incrementally during an internship and extended to demonstrate practical frontend development skills, UI design, and API integration.
 
-Files
-•	index.html — main page
-•	style.css — basic styling
-•	script.js — JS with showWelcome()
+The project focuses on building interactive, user-friendly web interfaces using core web technologies.
 
-Recipe Finder — Internship Task 2
+---
 
-This is the Task 2 submission for the internship. It demonstrates:
-•	Responsive layout using Flexbox (navigation) and CSS Grid (content)
-•	Media queries for different screen sizes
-•	A dynamic To-Do List where users can add and remove tasks
-•	An Image Gallery where users can upload and delete images
+Features
 
-Files
-•	second.html — responsive layout + interactive features
-•	style.css — shared styling for consistency
-•	script.js — JS for DOM manipulation (to-do list and gallery)
+- Search and display recipes using an external API
+- Responsive design for mobile, tablet, and desktop
+- Clean navigation and structured layout
+- Image carousel and gallery components
+- Interactive To-Do / Notes application with localStorage
+- Product listing page with filtering and sorting
+- Interactive quiz module
 
-Recipe Finder — Internship Task 3
+---
 
-This is the Task 3 submission for the internship. It demonstrates:
-•   Advanced CSS styling for interactive, responsive web pages
-•   Use of media queries to adjust layouts, font sizes, and elements for mobile, tablet, and desktop
-•   Building complex JavaScript projects:
- – Image carousel (carousel.html + JS)
- – Interactive quiz (quiz.html + JS)
-•   Working with external APIs to fetch real-time data (e.g., recipes) and display it dynamically (recipes.html)
+Tech Stack
 
-Files
-•   carousel.html — image carousel page
-•   quiz.html — interactive quiz page
-•   recipes.html — API integration page to fetch and display data
-•   style.css — shared styling for all pages
-•   carousel.js — JS for image carousel
-•   quiz.js — JS for quiz interactivity
+- HTML5 — semantic structure and layout
+- CSS3 — Flexbox, Grid, media queries
+- JavaScript (ES6) — DOM manipulation, events, API handling
+- Browser APIs — Fetch API, localStorage
 
-Full Project Implementation — Internship Task 4
+---
 
-This is the Task 4 submission for the internship. It demonstrates:
-•   Combining HTML, CSS, and JavaScript to build fully functioning projects
-•   Building a Personal Portfolio Website:
- – Sections include “About”, “Projects”, and “Contact”
- – Fully responsive design across mobile, tablet, and desktop
-•   Creating a To-Do List / Note-Taking App:
- – Implements data persistence using localStorage
- – Tasks or notes are saved and retrieved automatically
-•   Developing a Product Listing Page:
- – Users can filter items by category or price
- – Items can be sorted by rating, price, or other criteria
+Project Structure (simplified)
 
-Files
-•   index.html — Portfolio home page
-•   about.html — About section page
-•   projects.html — Projects showcase page
-•   contact.html — Contact form page
-•   todo.html — To-do list / note-taking app page
-•   products.html — Product listing page with filtering and sorting
-•   style.css — Shared styling for all pages
-•   script.js — JavaScript for portfolio navigation, to-do app, and product interactions
+/
+├── index.html          # Main entry / portfolio home  
+├── recipes.html        # Recipe search and API integration  
+├── carousel.html       # Image carousel  
+├── quiz.html           # Interactive quiz  
+├── todo.html           # To-do / notes app  
+├── products.html       # Product listing with filters  
+├── style.css           # Shared styles  
+├── script.js           # Shared JavaScript logic  
+├── carousel.js         # Carousel functionality  
+├── quiz.js             # Quiz logic  
+
+---
+
+Getting Started
+
+1. Clone the repository  
+   git clone https://github.com/23f3000678/special-spork.git
+
+2. Open index.html in your browser
+
+3. Navigate through the pages to explore different features
+
+No backend setup or build tools are required.
+
+---
+
+Learning Outcomes
+
+- Building responsive layouts using CSS Grid and Flexbox
+- Writing modular and reusable JavaScript
+- Handling user interactions and events
+- Fetching and displaying data from external APIs
+- Managing client-side state using localStorage
+- Structuring and organizing multi-page frontend projects
+
+---
+
+Notes
+
+This project was created as a learning-focused web application during an internship.  
+It demonstrates frontend fundamentals and hands-on experience with real-world UI features rather than production-level optimization.
+
+:D
